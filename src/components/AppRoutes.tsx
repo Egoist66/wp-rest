@@ -1,14 +1,18 @@
-import { FC } from "react";
+import { FC, Suspense, lazy } from "react";
 import {Routes, Route} from 'react-router-dom'
 import { BlogContainer } from "./blog/BlogContainer";
+
+const LazyBlog = lazy(() => import('./pages/Blog'))
 
 export const AppRoutes: FC = () => {
 
     return (
-        <Routes>
-            <Route index element={<BlogContainer />} />
-            <Route path="/post/:id" element={<h2>Blog</h2>} />
-            <Route path="*" element={<h2>404 not found</h2>} />
-        </Routes>
+        <Suspense fallback={<h2 style={{textAlign: 'center'}}>Loading...</h2>}>
+            <Routes>
+                <Route index element={<BlogContainer />} />
+                <Route path="/post/:id" element={<LazyBlog />} />
+                <Route path="*" element={<h2>404 not found</h2>} />
+            </Routes>
+        </Suspense>
     )
 }

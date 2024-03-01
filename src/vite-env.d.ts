@@ -240,3 +240,207 @@ export interface Cury {
   href: string
   templated: boolean
 }
+
+//////////////////////////////////////////////////////////////
+
+
+
+export type MediaRoot = Data[]
+
+export interface Data {
+  id: number
+  date: string
+  date_gmt: string
+  guid: Guid
+  modified: string
+  modified_gmt: string
+  slug: string
+  status: string
+  type: string
+  link: string
+  title: Title
+  author: number
+  comment_status: string
+  ping_status: string
+  template: string
+  meta: Meta
+  acf: any[]
+  description: Description
+  caption: Caption
+  alt_text: string
+  media_type: string
+  mime_type: string
+  media_details: MediaDetails
+  post: number
+  source_url: string
+  _links: Links
+}
+
+export interface Guid {
+  rendered: string
+}
+
+export interface Title {
+  rendered: string
+}
+
+export interface Meta {
+  _eb_attr: string
+  inline_featured_image: boolean
+  _kadence_starter_templates_imported_post: boolean
+  _kad_post_transparent: string
+  _kad_post_title: string
+  _kad_post_layout: string
+  _kad_post_sidebar_id: string
+  _kad_post_content_style: string
+  _kad_post_vertical_padding: string
+  _kad_post_feature: string
+  _kad_post_feature_position: string
+  _kad_post_header: boolean
+  _kad_post_footer: boolean
+}
+
+export interface Description {
+  rendered: string
+}
+
+export interface Caption {
+  rendered: string
+}
+
+export interface MediaDetails {
+  width: number
+  height: number
+  file: string
+  filesize: number
+  sizes: Sizes
+  image_meta: ImageMeta
+}
+
+export interface Sizes {
+  medium: Medium
+  thumbnail: Thumbnail
+  medium_large: MediumLarge
+  woocommerce_thumbnail: WoocommerceThumbnail
+  woocommerce_single: WoocommerceSingle
+  woocommerce_gallery_thumbnail: WoocommerceGalleryThumbnail
+  "dgwt-wcas-product-suggestion": DgwtWcasProductSuggestion
+  full: Full
+}
+
+export interface Medium {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  mime_type: string
+  source_url: string
+}
+
+export interface Thumbnail {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  mime_type: string
+  source_url: string
+}
+
+export interface MediumLarge {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  mime_type: string
+  source_url: string
+}
+
+export interface WoocommerceThumbnail {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  uncropped: boolean
+  mime_type: string
+  source_url: string
+}
+
+export interface WoocommerceSingle {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  mime_type: string
+  source_url: string
+}
+
+export interface WoocommerceGalleryThumbnail {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  mime_type: string
+  source_url: string
+}
+
+export interface DgwtWcasProductSuggestion {
+  file: string
+  width: number
+  height: number
+  filesize: number
+  mime_type: string
+  source_url: string
+}
+
+export interface Full {
+  file: string
+  width: number
+  height: number
+  mime_type: string
+  source_url: string
+}
+
+export interface ImageMeta {
+  aperture: string
+  credit: string
+  camera: string
+  caption: string
+  created_timestamp: string
+  copyright: string
+  focal_length: string
+  iso: string
+  shutter_speed: string
+  title: string
+  orientation: string
+  keywords: any[]
+}
+
+export interface Links {
+  self: Self[]
+  collection: Collection[]
+  about: About[]
+  author: Author[]
+  replies: Reply[]
+}
+
+export interface Self {
+  href: string
+}
+
+export interface Collection {
+  href: string
+}
+
+export interface About {
+  href: string
+}
+
+export interface Author {
+  embeddable: boolean
+  href: string
+}
+
+export interface Reply {
+  embeddable: boolean
+  href: string
+}
